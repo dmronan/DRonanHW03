@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bip_The_Guy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="delly" translatesAutoresizingMaskIntoConstraints="NO" id="qr7-xz-aRc">
+                                <rect key="frame" x="16" y="28" width="343" height="438"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HPm-ca-aBt" appends="YES" id="hTx-VZ-9yM"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose Image to Punch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeu-e2-1CY">
+                                <rect key="frame" x="96" y="474" width="183" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="m8x-Lh-Zr9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HPc-IN-g1t">
+                                <rect key="frame" x="88" y="503" width="199" height="30"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xtg-qQ-ZuW">
+                                <rect key="frame" x="88" y="520" width="199" height="0.0"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yp-dj-NUx">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="0.0"/>
+                                        <state key="normal" title="Photo Library"/>
+                                        <connections>
+                                            <action selector="libraryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEU-DJ-RaJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lh-iL-Rbl">
+                                        <rect key="frame" x="122" y="0.0" width="77" height="0.0"/>
+                                        <state key="normal" title="Take Photo"/>
+                                        <connections>
+                                            <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KBc-dX-G0W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qr7-xz-aRc" firstAttribute="centerX" secondItem="qeu-e2-1CY" secondAttribute="centerX" id="G6I-Y0-nGc"/>
+                            <constraint firstItem="HPc-IN-g1t" firstAttribute="trailing" secondItem="xtg-qQ-ZuW" secondAttribute="trailing" id="IHL-eQ-lsb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xtg-qQ-ZuW" secondAttribute="bottom" constant="117" id="KM6-mM-h1W"/>
+                            <constraint firstItem="qr7-xz-aRc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="QMg-6y-lxx"/>
+                            <constraint firstItem="qr7-xz-aRc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="V9S-Qu-avK"/>
+                            <constraint firstItem="qr7-xz-aRc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="m8M-sC-CQX"/>
+                            <constraint firstItem="xtg-qQ-ZuW" firstAttribute="top" secondItem="qeu-e2-1CY" secondAttribute="bottom" constant="25" id="mow-du-xjJ"/>
+                            <constraint firstItem="qeu-e2-1CY" firstAttribute="top" secondItem="qr7-xz-aRc" secondAttribute="bottom" constant="8" symbolic="YES" id="mqN-dT-HDh"/>
+                            <constraint firstItem="qeu-e2-1CY" firstAttribute="centerX" secondItem="HPc-IN-g1t" secondAttribute="centerX" id="pDX-rw-1Qi"/>
+                            <constraint firstItem="HPc-IN-g1t" firstAttribute="leading" secondItem="xtg-qQ-ZuW" secondAttribute="leading" id="u9K-dx-vyd"/>
+                            <constraint firstItem="HPc-IN-g1t" firstAttribute="top" secondItem="qeu-e2-1CY" secondAttribute="bottom" constant="8" symbolic="YES" id="w09-fT-srC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HPc-IN-g1t" secondAttribute="bottom" constant="134" id="xYQ-sp-mgG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HPm-ca-aBt">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="gO7-NC-3c3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="delly" width="634" height="902"/>
+    </resources>
 </document>
